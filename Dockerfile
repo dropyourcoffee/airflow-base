@@ -1,6 +1,7 @@
 
 FROM python:3.8-buster
-LABEL maintainer="Dexter Jung"
+MAINTAINER Dexter Jung <dropyourcoffee@gmail.com>
+LABEL Version="1.0.13"
 
 # prompt 제거
 ENV DEBIAN_FRONTEND noninteractive
