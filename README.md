@@ -10,7 +10,7 @@ docker build -t airflow-base . \
 -p 8080:8080 \
 -v /Users/dexter/Projects/airflow-base/dags:/usr/local/airflow/dags \
 -v /Users/dexter/Projects/airflow-base/requirements.txt:/requirements.txt \
---name qrobo_airflow \
+--name airflow \
 airflow-base
 
 ```

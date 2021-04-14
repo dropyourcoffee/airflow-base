@@ -2,6 +2,9 @@
 FROM python:3.8-buster
 MAINTAINER Dexter Jung <dropyourcoffee@gmail.com>
 LABEL Version="1.0.13"
+LABEL Description="Base image for Apache Airflow" \
+	Usage="docker run -p 8080:8080 airflow-base" \
+	Version="1.0.14"
 
 # prompt 제거
 ENV DEBIAN_FRONTEND noninteractive
@@ -58,6 +61,7 @@ RUN set -ex \
     && pip install pyasn1 \
     && pip install apache-airflow[crypto,celery,postgres,hive,jdbc,mysql,ssh${AIRFLOW_DEPS:+,}${AIRFLOW_DEPS}]==${AIRFLOW_VERSION} \
     && pip install 'redis==3.2' \
+    && pip install 'SQLAlchemy==1.3.15' \
 
     && if [ -n "${PYTHON_DEPS}" ]; then pip install ${PYTHON_DEPS}; fi \
     && apt-get purge --auto-remove -yqq $buildDeps \
