@@ -1,9 +1,8 @@
 
 FROM python:3.8-buster
 MAINTAINER Dexter Jung <dropyourcoffee@gmail.com>
-LABEL Version="1.0.13"
 LABEL Description="Base image for Apache Airflow" \
-	Usage="docker run -p 8080:8080 airflow-base" \
+	Usage="docker run -p 8080:8080 -v $(pwd):/usr/local/airflow/dags airflow-base" \
 	Version="1.0.14"
 
 # prompt 제거
